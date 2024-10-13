@@ -7,7 +7,7 @@ const Item = ( props) => {
 
   const handleClick = () => {
     // Pass the product data through the state
-    navigate(`/product/${props.product.id}`, { state: { product: props.product } });
+    navigate(`/product/${props.product.id}`);
   };
 
   return (

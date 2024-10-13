@@ -1,10 +1,21 @@
 // ProductDetails.js
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
+import {productDetails} from './data.js';
+
 
 const ProductDetails = () => {
-  const location = useLocation();
-  const { product } = location.state; // Destructure product from the state
+
+  const {id}= useParams();
+  // const location = useLocation();
+  // const { product } = location.state; // Destructure product from the 
+
+  const product= productDetails.find((ele)=>{
+   return ele.id===parseInt(id);
+  });
+
+  // console.log(typeof product);  object
+  
 
 //   if (!product) {
 //     return <h2>Product not found</h2>;
